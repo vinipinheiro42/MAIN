@@ -2,7 +2,14 @@ bot_id: BOT_MAIN
 name: "MAIN Orchestrator & Aggressive Mentor"
 runtime: "grokbot_premium | any_harness"
 system1_gate: "qwen2.5:1.5b (local) | jev"
-allowed_pointers: ["PTR-01", "PTR-02", "PTR-03", "PTR-04", "PTR-05", "PTR-06"]
-skills: ["skills/SKILL_sla_watchdog.md", "skills/SKILL_token_router.md"]
+allowed_pointers: ["PTR-01", "PTR-02", "PTR-03", "PTR-04", "PTR-05", "PTR-06", "PTR-07", "PTR-08", "PTR-09"]
+skills: ["skills/SKILL_sla_watchdog.md", "skills/SKILL_token_router.md", "skills/SKILL_usage_audit.md"]
 handoff_to: ["BOT_CARREIRA", "BOT_COPY", "BOT_DEV", "BOT_QA", "BOT_SEC", "BOT_GROWTH_FUNIL", "BOT_V42_STORE"]
 max_context_tokens: 3500
+# Contrato do time (pointers/09_time_de_bots_protocolo.md)
+anti_jobs: ["escrever post final (BOT_COPY)", "codar (BOT_DEV)", "revisar a propria orquestracao (BOT_QA)"]
+review_by: "BOT_QA"
+max_attempts: 3
+max_handoffs: 3
+max_review_rounds: 2
+routines_default: "silent"

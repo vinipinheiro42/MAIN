@@ -1,0 +1,6 @@
+# Copie para state/forbidden_terms.local.txt (gitignored) e preencha, um termo por linha.
+# Usado por scripts/preflight.py (gate G3). Sem o arquivo local, o pre-flight falha fechado.
+# Inclua: nomes de empregadores atuais e anteriores, clientes, projetos internos, nomes de sistemas internos.
+# Exemplo de formato (substitua):
+# NomeDoEmpregador
+# NomeDoCliente

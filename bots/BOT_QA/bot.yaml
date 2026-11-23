@@ -2,7 +2,14 @@ bot_id: BOT_QA
 name: "QA, Auditoria Esperado vs. Real & JEV Gate"
 runtime: "local_scripts + qwen_1.5b_system1 + qwen_14b_local"
 jev_backend: "heuristic | ollama | jev"
-allowed_pointers: ["PTR-05", "PTR-06"]
+allowed_pointers: ["PTR-05", "PTR-06", "PTR-09"]
 skills: ["skills/SKILL_loop_qa_audit.md", "skills/SKILL_sla_watchdog.md"]
 handoff_to: ["BOT_DEV", "BOT_SEC", "BOT_MAIN"]
 max_context_tokens: 3000
+# Contrato do time (pointers/09_time_de_bots_protocolo.md)
+anti_jobs: ["reescrever a entrega (devolve ate 3 bloqueantes)", "executar a acao que aprovou"]
+review_by: "BOT_MAIN"
+max_attempts: 3
+max_handoffs: 3
+max_review_rounds: 2
+routines_default: "silent"

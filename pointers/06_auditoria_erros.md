@@ -11,6 +11,8 @@ sla_review_days: 7
 # PTR-06 — MEMÓRIA OPERACIONAL DE ERROS & AUTO-APRENDIZADO (PÓS-MORTEM)
 
 > **Propósito:** Errar rápido uma vez é aprendizado barato. Errar a mesma coisa duas vezes é falha de sistema. Todo erro relevante gera **1 entrada curta aqui + 1 regra ou script que impede a repetição**.
+>
+> **Regra (23/11/2026):** a contramedida preferida é um **check determinístico** (lint, teste, gate em `scripts/preflight.py` ou `decision_gate.py`), não um parágrafo a mais no prompt (setup pstack, catálogo GB). A versão de 1 linha da lição vai para `LESSONS.md` (≤ 20 linhas, lido no boot). O detalhe fica aqui.
 
 ## Formato Padrão de Registro
 

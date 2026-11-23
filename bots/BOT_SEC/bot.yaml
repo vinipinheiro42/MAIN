@@ -1,7 +1,14 @@
 bot_id: BOT_SEC
 name: "Segurança, Secrets, Compliance & NDA Permaneo"
 runtime: "local_scripts + qwen_14b_local"
-allowed_pointers: ["PTR-05", "PTR-06"]
-skills: ["skills/SKILL_loop_qa_audit.md"]
+allowed_pointers: ["PTR-05", "PTR-06", "PTR-09"]
+skills: ["skills/SKILL_loop_qa_audit.md", "skills/SKILL_preflight_externo.md"]
 handoff_to: ["BOT_DEV", "BOT_MAIN"]
 max_context_tokens: 2800
+# Contrato do time (pointers/09_time_de_bots_protocolo.md)
+anti_jobs: ["publicar", "alterar codigo de produto (BOT_DEV)"]
+review_by: "BOT_QA"
+max_attempts: 3
+max_handoffs: 3
+max_review_rounds: 2
+routines_default: "silent"

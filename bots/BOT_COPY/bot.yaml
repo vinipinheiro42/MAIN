@@ -1,7 +1,14 @@
 bot_id: BOT_COPY
 name: "Copy, Conteúdo & Distribuição Multicanal"
 runtime: "grokbot_premium"
-allowed_pointers: ["PTR-02", "PTR-03"]
-skills: ["skills/SKILL_content_from_work.md", "skills/SKILL_token_router.md"]
+allowed_pointers: ["PTR-02", "PTR-03", "PTR-09"]
+skills: ["skills/SKILL_content_from_work.md", "skills/SKILL_token_router.md", "skills/SKILL_preflight_externo.md"]
 handoff_to: ["BOT_QA", "BOT_SEC", "BOT_GROWTH_FUNIL"]
 max_context_tokens: 3200
+# Contrato do time (pointers/09_time_de_bots_protocolo.md)
+anti_jobs: ["publicar sem sim do Vini ao texto exato", "definir oferta ou preco (BOT_GROWTH_FUNIL)", "revisar o proprio texto (BOT_QA)"]
+review_by: "BOT_QA"
+max_attempts: 3
+max_handoffs: 3
+max_review_rounds: 2
+routines_default: "silent"

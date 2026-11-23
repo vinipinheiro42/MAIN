@@ -1,0 +1,17 @@
+{
+  "_doc": "Inventario de rotinas do time no Grok Bot. Preencha com o que cada bot responder ao prompt M3 de docs/MUDANCAS-PARA-APLICAR.md. Nao invente: rotina sem dado confirmado fica fora. Rode: python scripts/usage_audit.py",
+  "_schema": {
+    "name": "nome da rotina",
+    "bot": "bot dono (um dono por fonte)",
+    "cadence": "every_15_min | every_30_min | hourly | every_2_hours | every_4_hours | 3x_day | 2x_day | daily | weekdays | weekly | trigger | paused",
+    "source": "fonte que a rotina le (ex.: outlook:lva.pinheiro, x:bookmarks, linkedin:vagas-fde)",
+    "data_changes_per_day": "quantas vezes por dia o dado muda de verdade (numero)",
+    "trigger_possible": "true se existe gatilho de evento para essa fonte",
+    "seen_file": "nome do arquivo em state/seen/ ou null",
+    "stop_condition": "texto curto: quando para / limite de tentativas",
+    "output_read": "true se o Vini (ou outro bot) usa a saida",
+    "posts_in_group_chat": "true se responde em group chat",
+    "last_reviewed": "AAAA-MM-DD"
+  },
+  "routines": []
+}

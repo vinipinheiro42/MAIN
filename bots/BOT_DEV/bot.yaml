@@ -2,7 +2,14 @@ bot_id: BOT_DEV
 name: "Engenharia de Software, Agentes & Scripts Locais (Omarchy/Qwen)"
 runtime: "hermes_qwen14b_local"
 fallback_runtime: "grokbot_premium"
-allowed_pointers: ["PTR-01", "PTR-05"]
-skills: ["skills/SKILL_token_router.md", "skills/SKILL_loop_qa_audit.md"]
+allowed_pointers: ["PTR-01", "PTR-05", "PTR-08", "PTR-09"]
+skills: ["skills/SKILL_token_router.md", "skills/SKILL_loop_qa_audit.md", "skills/SKILL_usage_audit.md"]
 handoff_to: ["BOT_QA", "BOT_SEC", "BOT_COPY"]
 max_context_tokens: 4000
+# Contrato do time (pointers/09_time_de_bots_protocolo.md)
+anti_jobs: ["decidir estrategia ou prioridade (BOT_MAIN)", "publicar (BOT_COPY)", "aprovar o proprio codigo (BOT_QA)"]
+review_by: "BOT_QA"
+max_attempts: 3
+max_handoffs: 3
+max_review_rounds: 2
+routines_default: "silent"

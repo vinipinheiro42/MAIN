@@ -32,6 +32,19 @@ python scripts/decision_gate.py --self-test
 
 # 4. Compilar todo o SSOT Markdown em um Livro único (+ .docx via pandoc)
 python scripts/build_book.py
+
+# 5. Auditoria de uso das rotinas do time (state/routines.json)
+python scripts/usage_audit.py
+
+# 6. Pre-flight antes de qualquer post/envio/candidatura (binário, fail-closed)
+python scripts/preflight.py --text-file content/drafts/<id>.md --channel x --owner-bot TWITTER \
+  --approved-in TWITTER --approval-ref "<msg>" --target @vinipinheiro42 --target-confirmed --facts-checked
+
+# 7. Arquivo seen de uma rotina (processa só o novo)
+python scripts/seen.py filter vagas-fde id1 id2 && python scripts/seen.py add vagas-fde id1 id2
+
+# 8. Decision gate em modo sombra (registra, não libera sozinho)
+python scripts/decision_gate.py --self-test --shadow --log state/decision_log.jsonl
 ```
 
 ## Primeiro Uso (Git Push Inicial)
@@ -44,3 +57,12 @@ git commit -m "feat: bootstrap MAIN portable bot harness, ecosystem master plan 
 git remote add origin git@github.com:vinipinheiro42/MAIN.git
 git push -u origin main
 ```
+
+## Protocolo do Time e Economia (23/11/2026)
+
+Regras novas que saíram dos salvos do X (fontes em `docs/ENRIQUECIMENTO-SALVOS-X.md`):
+- `pointers/07` segundo cérebro · `pointers/08` uso e pool do Grok Bot · `pointers/09` protocolo do time (dono, handoff, revisão, pre-flight).
+- Modelos em `templates/` · lições curtas em `LESSONS.md` · conhecimento em `knowledge/`.
+- O que exige mudança nos bots vivos do Grok Bot está em `docs/MUDANCAS-PARA-APLICAR.md` e não é aplicado por este repo.
+- **Portabilidade:** integrações vivem em MCP/CLI e nos arquivos do MAIN, não presas a um harness (catálogo GB, "OpenBot ou agentes.chat?").
+
