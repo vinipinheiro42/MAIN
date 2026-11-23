@@ -69,6 +69,7 @@ Cada pasta contém `AGENT.md` + `bot.yaml` e carrega **apenas** seus ponteiros a
 - `docs/ENRIQUECIMENTO-SALVOS-X.md` — fontes (salvos do X) de cada regra nova, com resumo e onde aplicar
 - `docs/MUDANCAS-PARA-APLICAR.md` — texto exato das mudanças em bots/rotinas/skills vivos (aplicar fora do repo)
 - `docs/MAPA-STACK-NEGOCIO-DIGITAL.md` — termos de negócio digital → onde cabem, bot dono, próximo passo
+- `docs/ESCOPO-GROKBOT.md` — escopo do Grok Bot a partir de 24/11: três linhas (LinkedIn/X); o restante chega via MAIN
 
 ## 5. Automação Determinística Local (`scripts/` — 0 Tokens)
 

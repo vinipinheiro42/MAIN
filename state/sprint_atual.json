@@ -2,7 +2,7 @@
   "sprint_id": "SPRINT-0-2026-W48",
   "period": "2026-11-23 to 2026-11-30",
   "goal": "Quebrar a inércia (GATE-0): subir vinipinheiro42/MAIN, publicar Artigo #1 (LinkedIn + X + TikTok), validar Qwen local na RX 7800 XT e reformar LinkedIn.",
-  "p0_single_focus_today": "Publicar Artigo #1: LinkedIn 8h15 (BOT_COPY, capa cover-pt.gif) e X (Vini publica EN 9h45 e PT 11h30; TWITTER divulga 10h e 11h45 só se o artigo estiver no ar) — SLA-001: 25/11/2026",
+  "p0_single_focus_today": "Escopo Grok Bot (3 linhas, docs/ESCOPO-GROKBOT.md): (1) publicar o já pré-aprovado — LinkedIn 8h15 (BOT_COPY) e divulgações X 10h/11h45 (TWITTER; artigos EN 9h45 e PT 11h30 o Vini publica à mão); respostas no privado e nos posts com texto pré-aprovado; (2) top 10 de engajadores no X e no LinkedIn, com sugestão de comentário; (3) buscar posts do artigo/projeto do dia e sugerir comentário com link. O restante chega via MAIN. Cota do dia 24/11: 15% (reset 27/11 14h38, America/Sao_Paulo).",
   "daily_linear_plan": [
     {
       "day": "Dia 1 (23/11)",
@@ -14,10 +14,10 @@
     {
       "day": "Dia 2 (24/11)",
       "tasks": [
-        "Publicar Artigo #1: LinkedIn 8h15 (BOT_COPY); X EN 9h45 (Vini à mão) + divulgação 10h (TWITTER); X PT 11h30 (Vini à mão) + divulgação 11h45 (TWITTER)",
-        "ESTRATEGISTA às 9h: comparar as 3 opções B2B para o Vini escolher o produto",
-        "Atualizar Headline, About e Experiências do LinkedIn com base na Consultoria (SLA-004) — segue pendente",
-        "Configurar Dual Boot Omarchy + ROCm/Vulkan + testar Qwen 14B e 1.5B (SLA-005) — segue pendente"
+        "GROKBOT linha 1: Publicar o já pré-aprovado — LinkedIn 8h15 (BOT_COPY, rotina publicar-artigo-primeiro-dia-no-linkedin); X EN 9h45 e PT 11h30 (Vini à mão; a ferramenta não publica artigo no X); divulgação 10h e 11h45 (TWITTER, só se o artigo estiver no ar). Respostas no privado e nos posts com texto pré-aprovado no chat do bot dono.",
+        "GROKBOT linha 2: Top 10 de engajadores no X e no LinkedIn, com sugestão de comentário sobre o que postaram no dia. Ainda não há rotina ativa (listas-diarias do TWITTER continua pausada; este registro não a religa). Comentários só depois do sim do Vini ao texto exato no chat do dono.",
+        "GROKBOT linha 3: Procurar posts relacionados ao artigo ou projeto do dia e sugerir comentário com link do repositório ou do artigo. Publicação só com sim prévio ao texto exato no chat do dono.",
+        "Fora do Grok Bot (chega via MAIN): o restante do plano do dia (perfil LinkedIn SLA-004, Dual Boot/Qwen SLA-005, opções B2B, candidaturas, etc.). A rotina já agendada do ESTRATEGISTA às 9h não foi alterada neste registro."
       ]
     },
     {
@@ -41,5 +41,31 @@
         "Auditoria semanal (domingo 30 min): atualizar gates.json, slas.json e pointers/06_auditoria_erros.md"
       ]
     }
-  ]
+  ],
+  "grokbot_scope": {
+    "effective_from": "2026-11-24",
+    "source": "instrução do Vini em 23/11/2026 20:53 America/Sao_Paulo",
+    "doc": "docs/ESCOPO-GROKBOT.md",
+    "items": [
+      "1. Atuação principal: interações no LinkedIn (BOT_COPY) e no X (TWITTER) — posts agendados com texto e horário pré-aprovados, e respostas no privado e nos posts.",
+      "2. Função secundária, mesmo que diária: listar os 10 usuários no X e no LinkedIn com mais engajamento e sugerir comentários pertinentes ao que eles postaram no dia.",
+      "3. Procurar posts relacionados ao projeto ou artigo do dia e comentar na postagem com o link do repositório ou do artigo."
+    ],
+    "everything_else": "O restante do planejamento fica a cargo de modelos fora do Grok Bot e chega ao time via atualização deste repositório (MAIN). O VINI faz pull no MAIN e foca só no que foi delegado nas 3 linhas.",
+    "bots_fora_do_escopo": "Nesta semana, não acordar no Grok Bot (salvo se a tarefa cair nas 3 linhas): ESTRATEGISTA, BOT_DEV, BOT_QA, BOT_CARREIRA e demais bots de carreira, BOT_GROWTH_FUNIL, BOT_SEC, BOT_V42_STORE. Nenhuma configuração de bot foi alterada neste registro. A rotina já agendada escolha-do-produto-b2b-24-11-9h (ESTRATEGISTA, 24/11 9h) e a rotina relatorio-do-modo-sombra-do-decisor (BOT_MAIN, 30/11 9h) permanecem como estavam.",
+    "usage_budget": {
+      "as_of": "2026-11-23",
+      "timezone": "America/Sao_Paulo",
+      "weekly_remaining_pct": 54.7,
+      "reset_at": "2026-11-27T14:38:00-03:00",
+      "allocation_pct": {
+        "2026-11-24": 15,
+        "2026-11-25": 15,
+        "2026-11-26": 15,
+        "2026-11-27_until_reset": 9.7
+      },
+      "extra_credits": false,
+      "note": "Sem créditos extras. Se o limite acabar antes da sexta, todos os bots param até a renovação."
+    }
+  }
 }
