@@ -1,0 +1,60 @@
+{
+  "updated_at": "2026-11-23",
+  "timezone": "America/Sao_Paulo",
+  "slas": [
+    {
+      "id": "SLA-001",
+      "title": "Publicar Artigo #1 (LinkedIn + Thread X)",
+      "owner": "Vinicius",
+      "gate": "GATE-0",
+      "due_date": "2026-11-25",
+      "status": "PENDING",
+      "expected_output": "Links reais publicados no LinkedIn e no X (Twitter) sem esperar perfeição visual"
+    },
+    {
+      "id": "SLA-002",
+      "title": "Inicializar repositório privado vinipinheiro42/MAIN no GitHub",
+      "owner": "Vinicius",
+      "gate": "GATE-0",
+      "due_date": "2026-11-25",
+      "status": "PENDING",
+      "expected_output": "git push inicial concluído com kit MAIN + scripts testados"
+    },
+    {
+      "id": "SLA-003",
+      "title": "Gravar e publicar versão curta TikTok (65s) do Artigo #1",
+      "owner": "Vinicius",
+      "gate": "GATE-0",
+      "due_date": "2026-11-27",
+      "status": "PENDING",
+      "expected_output": "1 vídeo curto publicado no TikTok usando roteiro content/01_artigo_setup_jornada_fde.md"
+    },
+    {
+      "id": "SLA-004",
+      "title": "Reformar Headline, About e Experiências do LinkedIn",
+      "owner": "Vinicius",
+      "gate": "GATE-1",
+      "due_date": "2026-11-28",
+      "status": "PENDING",
+      "expected_output": "Perfil atualizado seguindo Consultoria LinkedIn com posicionamento FDE/FDDS/AI Eng"
+    },
+    {
+      "id": "SLA-005",
+      "title": "Validar Omarchy + Ollama/ROCm rodando Qwen 14B + Qwen 1.5B na RX 7800 XT",
+      "owner": "Vinicius",
+      "gate": "GATE-0",
+      "due_date": "2026-11-29",
+      "status": "PENDING",
+      "expected_output": "Benchmark real (tokens/s e uso de VRAM <= 15GB) registrado em MEMORY.md"
+    },
+    {
+      "id": "SLA-006",
+      "title": "Criar repo público PUB-JOURN-PROJ-01-agentic-loop-jev (v0.1 rodando)",
+      "owner": "Vinicius + Qwen/Grokbot",
+      "gate": "GATE-1",
+      "due_date": "2026-12-04",
+      "status": "PENDING",
+      "expected_output": "Repo público em EN com Spec, Loop QA, pytest verde, Dockerfile e README executivo"
+    }
+  ]
+}

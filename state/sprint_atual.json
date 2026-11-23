@@ -1,0 +1,43 @@
+{
+  "sprint_id": "SPRINT-0-2026-W48",
+  "period": "2026-11-23 to 2026-11-30",
+  "goal": "Quebrar a inércia (GATE-0): subir vinipinheiro42/MAIN, publicar Artigo #1 (LinkedIn + X + TikTok), validar Qwen local na RX 7800 XT e reformar LinkedIn.",
+  "p0_single_focus_today": "Publicar Artigo #1 no LinkedIn e no X (content/01_artigo_setup_jornada_fde.md) — SLA: 25/11/2026",
+  "daily_linear_plan": [
+    {
+      "day": "Dia 1 (23/11)",
+      "tasks": [
+        "Revisar e publicar Artigo #1 no LinkedIn + Thread no X (SLA-001)",
+        "Fazer git init e push do repo privado vinipinheiro42/MAIN (SLA-002)"
+      ]
+    },
+    {
+      "day": "Dia 2 (24/11)",
+      "tasks": [
+        "Atualizar Headline, About e Experiências do LinkedIn com base na Consultoria (SLA-004)",
+        "Configurar Dual Boot Omarchy + ROCm/Vulkan + testar Qwen 14B e 1.5B (SLA-005)"
+      ]
+    },
+    {
+      "day": "Dia 3 (25/11)",
+      "tasks": [
+        "Gravar e publicar roteiro curto 65s do Artigo #1 no TikTok (SLA-003)",
+        "Publicar Post #2 (derivado do benchmark real do Qwen na RX 7800 XT)"
+      ]
+    },
+    {
+      "day": "Dia 4–5 (26–27/11)",
+      "tasks": [
+        "Escrever Spec + Arquitetura de PUB-JOURN-PROJ-01-agentic-loop-jev (em EN)",
+        "Implementar core do Loop + testes determinísticos (pytest + ruff)"
+      ]
+    },
+    {
+      "day": "Dia 6–7 (28–29/11)",
+      "tasks": [
+        "Publicar Post #3 (reciclando artigo JEV/Loops dos 45 artigos prontos + link do repo)",
+        "Auditoria semanal (domingo 30 min): atualizar gates.json, slas.json e pointers/06_auditoria_erros.md"
+      ]
+    }
+  ]
+}

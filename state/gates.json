@@ -1,0 +1,107 @@
+{
+  "updated_at": "2026-11-23",
+  "current_state": "ESTADO_0_FUNDACAO",
+  "gates": [
+    {
+      "id": "GATE-0",
+      "name": "Fundação MAIN + Quebra da Inércia",
+      "status": "IN_PROGRESS",
+      "progress_pct": 50,
+      "unlocks": "ESTADO_1_TRACAO_FDE",
+      "criteria": [
+        {
+          "item": "Repositório MAIN criado com kit portável + scripts locais testados",
+          "done": true
+        },
+        {
+          "item": "Artigo #1 publicado no LinkedIn + X (+ roteiro TikTok)",
+          "done": false
+        },
+        {
+          "item": "Dual boot Omarchy + Qwen 14B/1.5B validado na RX 7800 XT 16GB",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "GATE-1",
+      "name": "Tração Técnica FDE/FDDS + Prova Pública (Dias 1–30)",
+      "status": "LOCKED",
+      "progress_pct": 0,
+      "unlocks": "ESTADO_2_MONETIZACAO_CAIXA_ZERO",
+      "criteria": [
+        {
+          "item": "8 peças técnicas publicadas (meta anti-kill-switch)",
+          "done": false
+        },
+        {
+          "item": "PUB-JOURN-PROJ-01 (Loop Engineering + JEV) em produção com testes, Docker e observabilidade",
+          "done": false
+        },
+        {
+          "item": "LinkedIn reformado + 3 CVs prioritários (FDE, FDDS, AI Eng) ativos",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "GATE-2",
+      "name": "Primeira Receita Caixa Zero (R$ 1.500 acumulados)",
+      "status": "LOCKED",
+      "progress_pct": 0,
+      "unlocks": "DEEPSEEK_API_PROPORCIONAL_LUCRO + ESTADO_3",
+      "criteria": [
+        {
+          "item": "Starter Kit Executável (R$ 57–75) publicado na AbacatePay/Hotmart com primeiras vendas",
+          "done": false
+        },
+        {
+          "item": "Oferta Diagnóstico B2B enviada a 20 decisores (Fintechs/Infoprodutos)",
+          "done": false
+        },
+        {
+          "item": "Receita líquida acumulada >= R$ 1.500",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "GATE-3",
+      "name": "Recorrência & Escala (MRR >= R$ 5.000 x 2 meses)",
+      "status": "LOCKED",
+      "progress_pct": 0,
+      "unlocks": "T3CODE_PLUS_CLAUDE + SEGUNDO_SSD_NVME_B650 + EXPANSAO_VIDEO_UGC",
+      "criteria": [
+        {
+          "item": "Plataforma V42 Agent Kit (R$ 997/ano) ativa com ponte automática do Degrau 1",
+          "done": false
+        },
+        {
+          "item": "Turma piloto Mentoria ou 1º contrato B2B ativo",
+          "done": false
+        },
+        {
+          "item": "MRR >= R$ 5.000 mantido por 2 meses consecutivos",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "GATE-4",
+      "name": "Operação Física (Galpão + Confecção + Impressão 3D)",
+      "status": "LOCKED",
+      "progress_pct": 0,
+      "unlocks": "ESTADO_4_GALPAO_PRODUCAO_FISICA",
+      "criteria": [
+        {
+          "item": "Caixa reservado >= 6 meses de OPEX físico",
+          "done": false
+        },
+        {
+          "item": "3 linhas de produto com demanda provada e margem líquida validada nos marketplaces",
+          "done": false
+        }
+      ]
+    }
+  ]
+}

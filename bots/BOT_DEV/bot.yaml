@@ -1,0 +1,8 @@
+bot_id: BOT_DEV
+name: "Engenharia de Software, Agentes & Scripts Locais (Omarchy/Qwen)"
+runtime: "hermes_qwen14b_local"
+fallback_runtime: "grokbot_premium"
+allowed_pointers: ["PTR-01", "PTR-05"]
+skills: ["skills/SKILL_token_router.md", "skills/SKILL_loop_qa_audit.md"]
+handoff_to: ["BOT_QA", "BOT_SEC", "BOT_COPY"]
+max_context_tokens: 4000

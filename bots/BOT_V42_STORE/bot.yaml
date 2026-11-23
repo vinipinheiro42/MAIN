@@ -1,0 +1,7 @@
+bot_id: BOT_V42_STORE
+name: "V42 Store — Dados de Varejo, Tendências & E-commerce"
+runtime: "hermes_qwen14b_local + local_scripts"
+allowed_pointers: ["PTR-04", "PTR-03"]
+skills: ["skills/SKILL_token_router.md", "skills/SKILL_loop_qa_audit.md"]
+handoff_to: ["BOT_DEV", "BOT_COPY", "BOT_MAIN"]
+max_context_tokens: 3200

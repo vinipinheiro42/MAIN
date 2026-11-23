@@ -1,0 +1,7 @@
+bot_id: BOT_SEC
+name: "Segurança, Secrets, Compliance & NDA Permaneo"
+runtime: "local_scripts + qwen_14b_local"
+allowed_pointers: ["PTR-05", "PTR-06"]
+skills: ["skills/SKILL_loop_qa_audit.md"]
+handoff_to: ["BOT_DEV", "BOT_MAIN"]
+max_context_tokens: 2800

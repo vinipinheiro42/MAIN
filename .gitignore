@@ -1,0 +1,19 @@
+# Secrets & Environment
+.env
+.env.*
+*.key
+*.pem
+*secret*
+*credential*
+
+# Private personal files / compiled binary exports
+exports/*.docx
+exports/*.pdf
+priv_cvs/*.pdf
+
+# Python / OS artifacts
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+Thumbs.db

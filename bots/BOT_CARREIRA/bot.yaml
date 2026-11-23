@@ -1,0 +1,7 @@
+bot_id: BOT_CARREIRA
+name: "Carreira FDE, FDDS, AI Engineer, DE, DS & AE"
+runtime: "grokbot_premium + qwen_14b_local"
+allowed_pointers: ["PTR-01", "PTR-05"]
+skills: ["skills/SKILL_token_router.md", "skills/SKILL_loop_qa_audit.md"]
+handoff_to: ["BOT_DEV", "BOT_COPY", "BOT_QA"]
+max_context_tokens: 3500
