@@ -17,7 +17,7 @@
       "owner": "Vinicius",
       "gate": "GATE-0",
       "due_date": "2026-11-25",
-      "status": "PENDING",
+      "status": "DONE",
       "expected_output": "git push inicial concluído com kit MAIN + scripts testados"
     },
     {

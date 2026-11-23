@@ -1,0 +1,107 @@
+{
+  "updated_at": "2026-11-23",
+  "github_owner": "vinipinheiro42",
+  "naming_mode": "OPTION_B_CLEAN_PUBLIC_WITH_TOPICS_AND_PRIV_PREFIX",
+  "core_repos": [
+    {
+      "name": "MAIN",
+      "visibility": "PRIVATE",
+      "role": "Central OS, portable bot harness (Grokbot & Hermes), pointers, scripts and SLAs",
+      "status": "ACTIVE"
+    },
+    {
+      "name": "WORKSPACE-BACKUP",
+      "visibility": "PRIVATE",
+      "role": "Private personal backup of notes, archives and workspace files",
+      "status": "CREATED_EMPTY"
+    }
+  ],
+  "public_journey_queue": [
+    {
+      "priority": "P0",
+      "sprint": "SPRINT-1",
+      "name": "ops-agent-mcp",
+      "alt_prefixed_name": "PUB-JOURN-PROJ-ops-agent-mcp",
+      "topics": ["pub-journ-proj", "fde", "ai-engineer", "mcp", "agents"],
+      "cvs_covered": ["FDE", "AI Engineer"],
+      "next_stage": "QA + Loop Audit + Docker Deploy + Observability + Artigo #2"
+    },
+    {
+      "priority": "P0",
+      "sprint": "SPRINT-1",
+      "name": "agent-poc-to-prod",
+      "alt_prefixed_name": "PUB-JOURN-PROJ-agent-poc-to-prod",
+      "topics": ["pub-journ-proj", "fde", "ai-engineer", "loop-engineering", "mlops"],
+      "cvs_covered": ["FDE", "AI Engineer", "DE"],
+      "next_stage": "Integrar Loop Engineering + decision_gate.py (JEV) + CI/CD"
+    },
+    {
+      "priority": "P1",
+      "sprint": "SPRINT-2",
+      "name": "credit-policy-copilot",
+      "alt_prefixed_name": "PUB-JOURN-PROJ-credit-policy-copilot",
+      "topics": ["pub-journ-proj", "fdds", "data-science", "fintech", "ai-engineer"],
+      "cvs_covered": ["FDDS", "Data Scientist", "AI Engineer"],
+      "next_stage": "Evals + Drift Monitoring + Estudo de Caso B2B Vertical Fintech"
+    },
+    {
+      "priority": "P1",
+      "sprint": "SPRINT-2",
+      "name": "messy-client-decisioning",
+      "alt_prefixed_name": "PUB-JOURN-PROJ-messy-client-decisioning",
+      "topics": ["pub-journ-proj", "fde", "fdds", "decisioning", "python"],
+      "cvs_covered": ["FDE", "FDDS"],
+      "next_stage": "End-to-End API + Testes Adversariais + Observabilidade"
+    },
+    {
+      "priority": "P2",
+      "sprint": "SPRINT-2",
+      "name": "analytics-gold-layer",
+      "alt_prefixed_name": "PUB-JOURN-PROJ-analytics-gold-layer",
+      "topics": ["pub-journ-proj", "analytics-engineer", "data-engineer", "sql"],
+      "cvs_covered": ["Analytics Engineer", "Data Engineer"],
+      "next_stage": "Documentação dimensional + Data Quality checks automatizados"
+    },
+    {
+      "priority": "P2",
+      "sprint": "CONTINUOUS",
+      "name": "fde-study-hackathons",
+      "alt_prefixed_name": "PUB-JOURN-PROJ-fde-study-hackathons",
+      "topics": ["pub-journ-proj", "fde", "fdds", "system-design"],
+      "cvs_covered": ["FDE", "FDDS"],
+      "next_stage": "Receber resumos semanais de papers e desafios resolvidos"
+    }
+  ],
+  "public_business_queue": [
+    {
+      "priority": "P1",
+      "sprint": "SPRINT-2",
+      "name": "kit-ceo-de-carreira",
+      "alt_prefixed_name": "PUB-BIZ-PROJ-kit-ceo-de-carreira",
+      "topics": ["pub-biz-proj", "agents", "career", "b2b"],
+      "next_stage": "Transformar em Isca Gratuita (Degrau 0) -> Ponte para Starter Kit R$ 67"
+    },
+    {
+      "priority": "P1",
+      "sprint": "SPRINT-2",
+      "name": "retail-trend-radar (TO_CREATE)",
+      "alt_prefixed_name": "PUB-BIZ-PROJ-retail-trend-radar",
+      "topics": ["pub-biz-proj", "v42-store", "ecommerce", "data-science"],
+      "next_stage": "Criar após GATE-1: scripts 0-token de tendências de varejo Zero-CAPEX"
+    }
+  ],
+  "private_repos": [
+    "PRIV-PROJ-permaneo-trabalhos",
+    "PRIV-PROJ-job-search",
+    "PRIV-PROJ-telegram-pipeline-template",
+    "PRIV-PROJ-telegram-course-pipeline",
+    "PRIV-PROJ-study-ai-engineer",
+    "PRIV-PROJ-study-linux-debian",
+    "PRIV-PROJ-study-programming-languages",
+    "PRIV-PROJ-study-computing-roadmap"
+  ],
+  "archived_legacy_repos": [
+    "main-life-os",
+    "Dados"
+  ]
+}

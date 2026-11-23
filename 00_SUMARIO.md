@@ -67,11 +67,12 @@ Cada pasta contém `AGENT.md` + `bot.yaml` e carrega **apenas** seus ponteiros a
 - `state/gates.json` — Gates de progressão (Estado 0 ao Estado 4) e travas de receita
 - `state/slas.json` — SLAs ativos com data limite e severidade
 - `state/sprint_atual.json` — Micro-atividades lineares do Sprint atual
+- `state/repo_queue.json` — Inventário oficial dos repositórios GitHub e fila priorizada de evolução
 
-## 7. Topologia Oficial de Repositórios GitHub (`github.com/vinipinheiro42`)
+## 7. Topologia Oficial de Repositórios GitHub (`github.com/vinipinheiro42`) — Padrão Opção B
 
-1. `MAIN` (Privado) — Este repositório central (cérebro, objetivos Permaneo, CVs, planejamento, kit de agentes, bucket).
-2. `PUB-JOURN-PROJ-[NOME]` (Público) — Portfólio técnico FDE / FDDS / AI Engineer / DE / DS / AE (código em EN, produção real).
-3. `PUB-BIZ-PROJ-[NOME]` (Público) — Projetos públicos de empreendedorismo, marketing digital, dados de varejo e audiovisual.
-4. `PRIV-PROJ-[NOME]` (Privado) — Projetos confidenciais (salário, propostas, finanças, clientes sob NDA).
+1. `MAIN` (Privado) — Repositório central (cérebro, objetivos Permaneo, CVs, planejamento, bots auto-contidos, scripts, SLAs).
+2. Públicos de Jornada (slug limpo + topic `pub-journ-proj`) — Portfólio técnico FDE / FDDS / AI Eng / DE / DS / AE (ex: `ops-agent-mcp`, `agent-poc-to-prod`, `credit-policy-copilot`).
+3. Públicos de Negócio (slug limpo + topic `pub-biz-proj`) — Projetos de empreendedorismo, marketing, varejo e iscas (ex: `kit-ceo-de-carreira`).
+4. `PRIV-PROJ-[NOME]` (Privado) — Projetos confidenciais e estudos privados.
 5. `WORKSPACE-BACKUP` (Privado) — Backup estruturado de notas e arquivos pessoais.

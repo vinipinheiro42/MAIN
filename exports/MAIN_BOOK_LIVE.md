@@ -1,6 +1,6 @@
 # VINIPINHEIRO42 — MAIN OPERATING BOOK
 
-> Compilado automaticamente a partir do SSOT Markdown em 2026-11-23 16:43.
+> Compilado automaticamente a partir do SSOT Markdown em 2026-11-23 16:51.
 > **NUNCA edite este arquivo ou o `.docx` manualmente.** Edite os `.md` fonte no Git e rode `python scripts/build_book.py`.
 
 
@@ -66,13 +66,14 @@ Cada pasta contém `AGENT.md` + `bot.yaml` e carrega **apenas** seus ponteiros a
 - `state/gates.json` — Gates de progressão (Estado 0 ao Estado 4) e travas de receita
 - `state/slas.json` — SLAs ativos com data limite e severidade
 - `state/sprint_atual.json` — Micro-atividades lineares do Sprint atual
+- `state/repo_queue.json` — Inventário oficial dos repositórios GitHub e fila priorizada de evolução
 
-## 7. Topologia Oficial de Repositórios GitHub (`github.com/vinipinheiro42`)
+## 7. Topologia Oficial de Repositórios GitHub (`github.com/vinipinheiro42`) — Padrão Opção B
 
-1. `MAIN` (Privado) — Este repositório central (cérebro, objetivos Permaneo, CVs, planejamento, kit de agentes, bucket).
-2. `PUB-JOURN-PROJ-[NOME]` (Público) — Portfólio técnico FDE / FDDS / AI Engineer / DE / DS / AE (código em EN, produção real).
-3. `PUB-BIZ-PROJ-[NOME]` (Público) — Projetos públicos de empreendedorismo, marketing digital, dados de varejo e audiovisual.
-4. `PRIV-PROJ-[NOME]` (Privado) — Projetos confidenciais (salário, propostas, finanças, clientes sob NDA).
+1. `MAIN` (Privado) — Repositório central (cérebro, objetivos Permaneo, CVs, planejamento, bots auto-contidos, scripts, SLAs).
+2. Públicos de Jornada (slug limpo + topic `pub-journ-proj`) — Portfólio técnico FDE / FDDS / AI Eng / DE / DS / AE (ex: `ops-agent-mcp`, `agent-poc-to-prod`, `credit-policy-copilot`).
+3. Públicos de Negócio (slug limpo + topic `pub-biz-proj`) — Projetos de empreendedorismo, marketing, varejo e iscas (ex: `kit-ceo-de-carreira`).
+4. `PRIV-PROJ-[NOME]` (Privado) — Projetos confidenciais e estudos privados.
 5. `WORKSPACE-BACKUP` (Privado) — Backup estruturado de notas e arquivos pessoais.
 
 ---
@@ -102,14 +103,14 @@ Em vez de tratar carreira e empreendedorismo como mundos concorrentes, o ecossis
 
 ---
 
-## 2. TOPOLOGIA OFICIAL DO GITHUB (`github.com/vinipinheiro42`)
+## 2. TOPOLOGIA OFICIAL DO GITHUB (`github.com/vinipinheiro42`) — PADRÃO DEFAULT (OPÇÃO B)
 
 | Padrão de Repositório | Visibilidade | Finalidade Estratégica | Idioma & Padrão |
 |---|---|---|---|
-| `MAIN` | **Privado** | Cérebro central: objetivos Permaneo, CVs, processos seletivos, planejamento, kit portável de agentes (`AGENT/SOUL/VALUES/HEARTBEAT/MEMORY`), ponteiros, scripts locais e SLAs. | PT-BR (estratégia) + EN (código) |
-| `PUB-JOURN-PROJ-[NOME]` | **Público** | Portfólio técnico comprovando as skills dos 6 CVs (FDE, FDDS, AI Eng, DE, DS, AE). Cada repo segue o ciclo completo: Paper/Spec -> E2E -> QA/Segurança -> Deploy -> Observabilidade. | **Inglês (EN)** — README executivo + arquitetura + demo |
-| `PUB-BIZ-PROJ-[NOME]` | **Público** | Portfólio B2B e de empreendedorismo: automações de marketing digital, scrapers/análises de tendências de varejo, pipelines de conteúdo e templates abertos. | PT-BR ou EN conforme público |
-| `PRIV-PROJ-[NOME]` | **Privado** | Dados sigilosos: propostas comerciais, negociações salariais, análises financeiras pessoais, projetos sob NDA de clientes B2B. | Privado + `.env` fora do Git |
+| `MAIN` | **Privado** | Cérebro central: objetivos Permaneo, CVs, processos seletivos, planejamento, bots auto-contidos (`bots/`), ponteiros, scripts locais e SLAs (`state/repo_queue.json`). | PT-BR (estratégia) + EN (código) |
+| Públicos de Jornada (slug limpo + topic `pub-journ-proj`) | **Público** | Portfólio técnico comprovando os 6 CVs (FDE, FDDS, AI Eng, DE, DS, AE). Slugs profissionais limpos na vitrine (ex: `ops-agent-mcp`, `agent-poc-to-prod`, `credit-policy-copilot`) + clonagem local em `~/repos/PUB-JOURN/`. | **Inglês (EN)** — README executivo + arquitetura + demo |
+| Públicos de Negócio (slug limpo + topic `pub-biz-proj`) | **Público** | Portfólio B2B e de empreendedorismo: automações de marketing digital, tendências de varejo e iscas abertas (ex: `kit-ceo-de-carreira`) + clonagem local em `~/repos/PUB-BIZ/`. | PT-BR ou EN conforme público |
+| `PRIV-PROJ-[NOME]` | **Privado** | Dados sigilosos e estudos privados: propostas, job search, trabalhos Permaneo, pipelines internos e clientes sob NDA. | Privado + `.env` fora do Git |
 | `WORKSPACE-BACKUP` | **Privado** | Backup estruturado de notas pessoais, documentos e arquivos históricos. | Privado (sync via script local) |
 
 ---

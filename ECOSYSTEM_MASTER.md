@@ -31,14 +31,14 @@ Em vez de tratar carreira e empreendedorismo como mundos concorrentes, o ecossis
 
 ---
 
-## 2. TOPOLOGIA OFICIAL DO GITHUB (`github.com/vinipinheiro42`)
+## 2. TOPOLOGIA OFICIAL DO GITHUB (`github.com/vinipinheiro42`) — PADRÃO DEFAULT (OPÇÃO B)
 
 | Padrão de Repositório | Visibilidade | Finalidade Estratégica | Idioma & Padrão |
 |---|---|---|---|
-| `MAIN` | **Privado** | Cérebro central: objetivos Permaneo, CVs, processos seletivos, planejamento, kit portável de agentes (`AGENT/SOUL/VALUES/HEARTBEAT/MEMORY`), ponteiros, scripts locais e SLAs. | PT-BR (estratégia) + EN (código) |
-| `PUB-JOURN-PROJ-[NOME]` | **Público** | Portfólio técnico comprovando as skills dos 6 CVs (FDE, FDDS, AI Eng, DE, DS, AE). Cada repo segue o ciclo completo: Paper/Spec -> E2E -> QA/Segurança -> Deploy -> Observabilidade. | **Inglês (EN)** — README executivo + arquitetura + demo |
-| `PUB-BIZ-PROJ-[NOME]` | **Público** | Portfólio B2B e de empreendedorismo: automações de marketing digital, scrapers/análises de tendências de varejo, pipelines de conteúdo e templates abertos. | PT-BR ou EN conforme público |
-| `PRIV-PROJ-[NOME]` | **Privado** | Dados sigilosos: propostas comerciais, negociações salariais, análises financeiras pessoais, projetos sob NDA de clientes B2B. | Privado + `.env` fora do Git |
+| `MAIN` | **Privado** | Cérebro central: objetivos Permaneo, CVs, processos seletivos, planejamento, bots auto-contidos (`bots/`), ponteiros, scripts locais e SLAs (`state/repo_queue.json`). | PT-BR (estratégia) + EN (código) |
+| Públicos de Jornada (slug limpo + topic `pub-journ-proj`) | **Público** | Portfólio técnico comprovando os 6 CVs (FDE, FDDS, AI Eng, DE, DS, AE). Slugs profissionais limpos na vitrine (ex: `ops-agent-mcp`, `agent-poc-to-prod`, `credit-policy-copilot`) + clonagem local em `~/repos/PUB-JOURN/`. | **Inglês (EN)** — README executivo + arquitetura + demo |
+| Públicos de Negócio (slug limpo + topic `pub-biz-proj`) | **Público** | Portfólio B2B e de empreendedorismo: automações de marketing digital, tendências de varejo e iscas abertas (ex: `kit-ceo-de-carreira`) + clonagem local em `~/repos/PUB-BIZ/`. | PT-BR ou EN conforme público |
+| `PRIV-PROJ-[NOME]` | **Privado** | Dados sigilosos e estudos privados: propostas, job search, trabalhos Permaneo, pipelines internos e clientes sob NDA. | Privado + `.env` fora do Git |
 | `WORKSPACE-BACKUP` | **Privado** | Backup estruturado de notas pessoais, documentos e arquivos históricos. | Privado (sync via script local) |
 
 ---
