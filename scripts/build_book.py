@@ -28,6 +28,7 @@ CHAPTER_ORDER = [
     "VALUES.md",
     "HEARTBEAT.md",
     "MEMORY.md",
+    "LESSONS.md",
 ]
 
 

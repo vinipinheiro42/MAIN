@@ -9,13 +9,14 @@ token_budget: 800
 
 ## 1. Trajetória Profissional Real (Fonte: `CV - LUIZ VINICIUS ALVES PINHEIRO.pdf`)
 
-> **Fato Crítico:** Vinicius NÃO é iniciante. Tem **6+ anos em produção** (finanças + infoprodutos) e experiência docente. O gargalo é posicionamento público + engenharia de produção FDE/Agentic AI, não falta de base.
+> **Fato Crítico:** Vinicius NÃO é iniciante. Tem **8+ anos em dados desde 2017** (inclui 2 anos de estágio na Marketdata 09/2017–08/2019), em produção em finanças + infoprodutos, e experiência docente. O gargalo é posicionamento público + engenharia de produção FDE/Agentic AI, não falta de base.
 
 - **Grupo Permaneo** — *Senior Data Scientist & AI Engineer — AIOps & Agents* (Jan/2026–atual): pipelines autônomos de agentes (Claude/Anthropic APIs, n8n), 11+ projetos analíticos em BigQuery/Dataform (SQLX), arquitetura bronze/silver/gold no GCP, Cloud Run, observabilidade/CI-CD e infoprodutos orientados a dados. *(Momento atual Nov/2026: reestruturação com demanda leve -> janela ~10h/dia.)*
 - **Santander Brasil** — *Senior Data Scientist — Credit & Cards* (Ago/2024–Dez/2025): modelos de risco de crédito (PD, LGD, EAD), precificação e default em Azure/Databricks + PySpark + CI/CD.
 - **Santander Asset Management** — *Senior Data Analyst / Data Engineer* (Mai/2022–Ago/2024): ETL escalável (Python, PySpark, Polars, SQL), governança regulatória, dashboards P&L para gestores de fundo.
 - **Coderhouse** — *Data Science & ML Instructor* (Nov/2023–Jan/2026): turmas de 20–40 alunos em Python, SQL, Data Science e ML aplicado.
 - **BMG Seguros** — *BI & Back-End Specialist* (Jul/2019–Mai/2022): bancos transacionais SQL Server, Pentaho/SSIS, sinistros e seguro crédito.
+- **Marketdata** — *Estágio* (Set/2017–Ago/2019): início da trajetória em dados (2 anos).
 - **Formação:** MBA em Data Science & Analytics (USP/ESALQ) | Bacharel em Ciência da Computação (Mackenzie, 2016–2021; TCC: *Detecção de Exoplanetas com ML e Visão Computacional*).
 
 ## 2. Hardware Real da Estação de Trabalho (Build Nov/2026)

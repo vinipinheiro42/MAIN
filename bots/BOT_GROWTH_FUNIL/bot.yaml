@@ -5,3 +5,10 @@ allowed_pointers: ["PTR-03", "PTR-02"]
 skills: ["skills/SKILL_token_router.md", "skills/SKILL_sla_watchdog.md"]
 handoff_to: ["BOT_COPY", "BOT_DEV", "BOT_MAIN"]
 max_context_tokens: 3400
+# Contrato do time (pointers/09_time_de_bots_protocolo.md)
+anti_jobs: ["publicar (BOT_COPY)", "gastar com trafego antes do gate de caixa", "contatar lead sem sim do Vini"]
+review_by: "BOT_QA"
+max_attempts: 3
+max_handoffs: 3
+max_review_rounds: 2
+routines_default: "silent"

@@ -1,7 +1,14 @@
 bot_id: BOT_CARREIRA
 name: "Carreira FDE, FDDS, AI Engineer, DE, DS & AE"
 runtime: "grokbot_premium + qwen_14b_local"
-allowed_pointers: ["PTR-01", "PTR-05"]
+allowed_pointers: ["PTR-01", "PTR-05", "PTR-07"]
 skills: ["skills/SKILL_token_router.md", "skills/SKILL_loop_qa_audit.md"]
 handoff_to: ["BOT_DEV", "BOT_COPY", "BOT_QA"]
 max_context_tokens: 3500
+# Contrato do time (pointers/09_time_de_bots_protocolo.md)
+anti_jobs: ["enviar candidatura sem sim do Vini", "publicar conteudo (BOT_COPY)", "codar projeto de portfolio (BOT_DEV)"]
+review_by: "BOT_QA"
+max_attempts: 3
+max_handoffs: 3
+max_review_rounds: 2
+routines_default: "silent"

@@ -25,6 +25,10 @@ from dataclasses import asdict, dataclass
 from typing import Any
 
 CONFIDENCE_THRESHOLD = float(os.getenv("JEV_CONFIDENCE_THRESHOLD", "0.85"))
+# Shadow mode (fonte: post "How To Wire Jev Into Grok Bot", ver docs/ENRIQUECIMENTO-SALVOS-X.md):
+# o gate decide e REGISTRA, mas nunca libera sozinho (escalate_to_human=True) ate a fase shadow acabar.
+SHADOW_MODE = os.getenv("DECISION_SHADOW", "0") == "1"
+DECISION_LOG = os.getenv("DECISION_LOG", "")  # ex.: state/decision_log.jsonl (gitignored)
 
 
 @dataclass
@@ -73,7 +77,44 @@ class DecisionGate:
         )
         return json.loads(data.get("response", "{}"))
 
+    def _finalize(self, result: DecisionResult, question: str) -> DecisionResult:
+        """Aplica shadow mode e grava trilha (toda decisao deixa rastro)."""
+        if SHADOW_MODE:
+            result.escalate_to_human = True
+            result.reason = f"[shadow] {result.reason}"
+        if DECISION_LOG:
+            try:
+                with open(DECISION_LOG, "a", encoding="utf-8") as fh:
+                    fh.write(json.dumps({"question": question, **asdict(result)}, ensure_ascii=False) + "\n")
+            except OSError:
+                result.escalate_to_human = True
+        return result
+
+    def _fail_closed(self, decision_type: str, value: Any, err: Exception) -> DecisionResult:
+        """Fail-closed: se o backend falhar, a resposta e NAO/escalar (timeout nao e pass)."""
+        return DecisionResult(decision_type, value, 0.0, self.backend, True, f"backend error -> fail-closed: {err}")
+
     def choice(self, state: dict[str, Any], question: str, options: list[str]) -> DecisionResult:
+        try:
+            return self._finalize(self._choice(state, question, options), question)
+        except (urllib.error.URLError, OSError, ValueError, json.JSONDecodeError) as err:
+            if not options:
+                raise
+            return self._finalize(self._fail_closed("choice", options[0], err), question)
+
+    def bool_gate(self, state: dict[str, Any], question: str) -> DecisionResult:
+        try:
+            return self._finalize(self._bool_gate(state, question), question)
+        except (urllib.error.URLError, OSError, ValueError, json.JSONDecodeError) as err:
+            return self._finalize(self._fail_closed("bool", False, err), question)
+
+    def score(self, state: dict[str, Any], question: str, rubric: str, scale: tuple[int, int] = (0, 10)) -> DecisionResult:
+        try:
+            return self._finalize(self._score(state, question, rubric, scale), question)
+        except (urllib.error.URLError, OSError, ValueError, json.JSONDecodeError) as err:
+            return self._finalize(self._fail_closed("score", scale[0], err), question)
+
+    def _choice(self, state: dict[str, Any], question: str, options: list[str]) -> DecisionResult:
         if not options:
             raise ValueError("options must be a non-empty list")
 
@@ -84,7 +125,10 @@ class DecisionGate:
                 f"State: {json.dumps(state, ensure_ascii=False)}\nQuestion: {question}"
             )
             out = self._call_ollama_json(prompt)
-            val = out.get("value") if out.get("value") in options else options[0]
+            if out.get("value") not in options:
+                # Resposta fora da lista nao vira opcao padrao em silencio: escala (fail-closed).
+                return DecisionResult("choice", options[0], 0.0, "ollama", True, f"invalid value {out.get('value')!r}")
+            val = out.get("value")
             conf = float(out.get("confidence", 0.5))
             return DecisionResult("choice", val, conf, "ollama", conf < CONFIDENCE_THRESHOLD, str(out.get("reason", "")))
 
@@ -104,7 +148,7 @@ class DecisionGate:
                 return DecisionResult("choice", opt, 0.90, "heuristic", False, "Direct keyword match in state")
         return DecisionResult("choice", options[0], 0.70, "heuristic", True, "No exact match; escalate to human or local LLM")
 
-    def bool_gate(self, state: dict[str, Any], question: str) -> DecisionResult:
+    def _bool_gate(self, state: dict[str, Any], question: str) -> DecisionResult:
         if self.backend == "ollama":
             prompt = (
                 "Return strict JSON with keys: value (boolean true/false), "
@@ -126,11 +170,12 @@ class DecisionGate:
             return DecisionResult("bool", bool(out.get("value")), conf, "jev", conf < CONFIDENCE_THRESHOLD, str(out.get("reason", "")))
 
         # Deterministic check: passes only if tests_passed and no_secrets_leaked are truthy
-        passed = bool(state.get("tests_passed", False)) and bool(state.get("no_secrets_leaked", True))
+        # Fail-closed: sem evidencia explicita de "sem segredos vazados", nao passa.
+        passed = bool(state.get("tests_passed", False)) and bool(state.get("no_secrets_leaked", False))
         conf = 0.95 if "tests_passed" in state else 0.60
         return DecisionResult("bool", passed, conf, "heuristic", conf < CONFIDENCE_THRESHOLD, "Deterministic QA gate check")
 
-    def score(self, state: dict[str, Any], question: str, rubric: str, scale: tuple[int, int] = (0, 10)) -> DecisionResult:
+    def _score(self, state: dict[str, Any], question: str, rubric: str, scale: tuple[int, int] = (0, 10)) -> DecisionResult:
         lo, hi = scale
         if self.backend == "ollama":
             prompt = (
@@ -162,7 +207,15 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="JEV-Pattern System-1 Decision Gate")
     parser.add_argument("--self-test", action="store_true", help="Run offline deterministic self-test")
     parser.add_argument("--backend", default=None, help="heuristic | ollama | jev")
+    parser.add_argument("--shadow", action="store_true", help="Shadow mode: decide e registra, mas sempre escala (sem liberar sozinho)")
+    parser.add_argument("--log", default=None, help="Arquivo JSONL de trilha (ex.: state/decision_log.jsonl)")
     args = parser.parse_args()
+
+    global SHADOW_MODE, DECISION_LOG
+    if args.shadow:
+        SHADOW_MODE = True
+    if args.log:
+        DECISION_LOG = args.log
 
     gate = DecisionGate(backend=args.backend)
     if args.self_test:

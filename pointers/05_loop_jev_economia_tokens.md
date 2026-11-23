@@ -60,3 +60,9 @@ sla_review_days: 7
 5. **RTK / Filtro de Logs** — nunca colar output gigante de terminal; filtrar apenas linhas de erro/resumo.
 6. **Graphify / Mapa de Repositório** — consultar o grafo estrutural do código antes de abrir arquivos aleatórios.
 7. **Diff-Only Review** — passar `git diff` em vez de arquivos inteiros nas auditorias.
+
+## Atualização 23/11/2026 — Uso do Grok Bot e Gate fail-closed
+- As regras de uso/pool/rotinas do Grok Bot ficam em `pointers/08_grokbot_uso_economia.md` (não duplicar aqui).
+- `scripts/decision_gate.py` agora é **fail-closed**: erro, timeout ou valor fora da lista viram `escalate_to_human=true` (nunca a 1ª opção em silêncio). O `bool_gate` heurístico exige `no_secrets_leaked=true` explícito. Há também o **modo sombra** (`--shadow`/`DECISION_SHADOW=1`, com trilha em `--log`) para ligar o JEV primeiro só registrando (fonte: "How To Wire Jev Into Grok Bot", catálogo GB).
+- Princípio de custo (catálogo GB, "Stop Paying for Failed Tasks"): o modelo mais barato é o que **termina a tarefa e passa no check**. Suba de tier só depois que o check falhar.
+
