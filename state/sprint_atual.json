@@ -2,20 +2,22 @@
   "sprint_id": "SPRINT-0-2026-W48",
   "period": "2026-11-23 to 2026-11-30",
   "goal": "Quebrar a inércia (GATE-0): subir vinipinheiro42/MAIN, publicar Artigo #1 (LinkedIn + X + TikTok), validar Qwen local na RX 7800 XT e reformar LinkedIn.",
-  "p0_single_focus_today": "Publicar Artigo #1 no LinkedIn e no X (content/01_artigo_setup_jornada_fde.md) — SLA: 25/11/2026",
+  "p0_single_focus_today": "Publicar Artigo #1: LinkedIn 8h15 (BOT_COPY, capa cover-pt.gif) e X (Vini publica EN 9h45 e PT 11h30; TWITTER divulga 10h e 11h45 só se o artigo estiver no ar) — SLA-001: 25/11/2026",
   "daily_linear_plan": [
     {
       "day": "Dia 1 (23/11)",
       "tasks": [
-        "Revisar e publicar Artigo #1 no LinkedIn + Thread no X (SLA-001)",
-        "Fazer git init e push do repo privado vinipinheiro42/MAIN (SLA-002)"
+        "Revisar e publicar Artigo #1 no LinkedIn + Thread no X (SLA-001) — preparado e aprovado em 23/11; publicação agendada para 24/11 (ainda não saiu)",
+        "Fazer git init e push do repo privado vinipinheiro42/MAIN (SLA-002) — concluído"
       ]
     },
     {
       "day": "Dia 2 (24/11)",
       "tasks": [
-        "Atualizar Headline, About e Experiências do LinkedIn com base na Consultoria (SLA-004)",
-        "Configurar Dual Boot Omarchy + ROCm/Vulkan + testar Qwen 14B e 1.5B (SLA-005)"
+        "Publicar Artigo #1: LinkedIn 8h15 (BOT_COPY); X EN 9h45 (Vini à mão) + divulgação 10h (TWITTER); X PT 11h30 (Vini à mão) + divulgação 11h45 (TWITTER)",
+        "ESTRATEGISTA às 9h: comparar as 3 opções B2B para o Vini escolher o produto",
+        "Atualizar Headline, About e Experiências do LinkedIn com base na Consultoria (SLA-004) — segue pendente",
+        "Configurar Dual Boot Omarchy + ROCm/Vulkan + testar Qwen 14B e 1.5B (SLA-005) — segue pendente"
       ]
     },
     {

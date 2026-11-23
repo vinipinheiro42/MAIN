@@ -13,5 +13,99 @@
     "posts_in_group_chat": "true se responde em group chat",
     "last_reviewed": "AAAA-MM-DD"
   },
-  "routines": []
+  "_inventory_notes": {
+    "updated_at": "2026-11-23",
+    "timezone": "America/Sao_Paulo",
+    "cadence_note": "Rotinas de disparo unico (data/hora marcada, depois se apagam) entram com cadence=trigger; o schema nao tem valor 'once'.",
+    "confirmed_empty": [
+      {
+        "bot": "BOT_DEV",
+        "reported": "2026-11-23",
+        "note": "nenhuma rotina"
+      },
+      {
+        "bot": "BOT_QA",
+        "reported": "2026-11-23 20:40",
+        "note": "nenhuma rotina"
+      }
+    ],
+    "pending_m3": "Inventario M3 dos demais bots ainda nao chegou. Nao inventar.",
+    "deleted": [
+      {
+        "bot": "ESTRATEGISTA",
+        "name": "arquivo-do-linkedin-pr-lista-de-30-contatos",
+        "deleted_on": "2026-11-20",
+        "note": "prazo venceu; fora do inventario ativo"
+      }
+    ]
+  },
+  "routines": [
+    {
+      "name": "divulgacao-artigo-en-24-11-10h",
+      "bot": "TWITTER",
+      "cadence": "trigger",
+      "source": "artigo EN do primeiro dia no X",
+      "seen_file": null,
+      "stop_condition": "Disparo unico em 24/11/2026 10:00 America/Sao_Paulo. Se o artigo EN estiver no ar, publica o texto de divulgacao aprovado e responde com o link; senao, nao posta e avisa o Vini. Depois se encerra.",
+      "output_read": true,
+      "last_reviewed": "2026-11-23"
+    },
+    {
+      "name": "divulgacao-artigo-pt-24-11-11h45",
+      "bot": "TWITTER",
+      "cadence": "trigger",
+      "source": "artigo PT do primeiro dia no X",
+      "seen_file": null,
+      "stop_condition": "Disparo unico em 24/11/2026 11:45 America/Sao_Paulo. Se o artigo PT estiver no ar, publica o texto de divulgacao aprovado e responde com o link; senao, nao posta e avisa o Vini. Depois se encerra.",
+      "output_read": true,
+      "last_reviewed": "2026-11-23"
+    },
+    {
+      "name": "listas-diarias",
+      "bot": "TWITTER",
+      "cadence": "paused",
+      "last_reviewed": "2026-11-23"
+    },
+    {
+      "name": "relatorio-semanal",
+      "bot": "TWITTER",
+      "cadence": "paused",
+      "last_reviewed": "2026-11-23"
+    },
+    {
+      "name": "aprendizados",
+      "bot": "TWITTER",
+      "cadence": "paused",
+      "last_reviewed": "2026-11-23"
+    },
+    {
+      "name": "publicar-artigo-primeiro-dia-no-linkedin",
+      "bot": "BOT_COPY",
+      "cadence": "trigger",
+      "source": "post curto v5 do primeiro dia (capa cover-pt.gif)",
+      "seen_file": null,
+      "stop_condition": "Disparo unico em 24/11/2026 08:15 America/Sao_Paulo, depois do pre-flight. Nao publica se o GIF for recusado ou se houver um novo 'espere'; nesses casos pergunta ao Vini. Depois se apaga.",
+      "output_read": true,
+      "last_reviewed": "2026-11-23"
+    },
+    {
+      "name": "escolha-do-produto-b2b-24-11-9h",
+      "bot": "ESTRATEGISTA",
+      "cadence": "trigger",
+      "seen_file": null,
+      "stop_condition": "Disparo unico em 24/11/2026 09:00 America/Sao_Paulo; entrega no chat do ESTRATEGISTA a comparacao das 3 opcoes B2B. Pode ser apagada depois que disparar.",
+      "output_read": true,
+      "last_reviewed": "2026-11-23"
+    },
+    {
+      "name": "relatorio-do-modo-sombra-do-decisor",
+      "bot": "BOT_MAIN",
+      "cadence": "trigger",
+      "source": "state/decision_log.jsonl",
+      "seen_file": null,
+      "stop_condition": "Disparo unico em 30/11/2026 09:00 America/Sao_Paulo (relatorio do modo sombra do DECISOR).",
+      "output_read": true,
+      "last_reviewed": "2026-11-23"
+    }
+  ]
 }
